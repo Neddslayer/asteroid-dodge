@@ -62,11 +62,11 @@ void update() {
 		controllerX = fabs(controllerX) > 12.7 ? controllerX / 4000.0 : 0;
 		controllerY = fabs(controllerY) > 12.7 ? controllerY / 4000.0 : 0;
 
-		if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_UP)) controllerX = -0.0635;
-		else if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_DOWN)) controllerX = 0.0635;
+		if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_UP)) controllerX = -0.03175;
+		else if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_DOWN)) controllerX = 0.03175;
 
-		if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_LEFT)) controllerY = 0.0635;
-		else if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_RIGHT)) controllerY = -0.0635;
+		if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_LEFT)) controllerY = 0.03175;
+		else if (controller_get_digital(E_CONTROLLER_MASTER, E_CONTROLLER_DIGITAL_RIGHT)) controllerY = -0.03175;
 
 		rocketTexture.dstrect = (rectangle_t){rocketTexture.dstrect.x + controllerX, rocketTexture.dstrect.y + controllerY, rocketTexture.dstrect.w, rocketTexture.dstrect.h};
 		rocketTexture.dstrect.x = clamp(rocketTexture.dstrect.x, bounds.left, bounds.right);
